@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.10)
 project(freeciv21 VERSION 3.1.0)
 set(BUG_URL "https://github.com/longturn/freeciv/issues")
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+
 # Dependencies
 find_package(CURL REQUIRED)
 find_package(ICU COMPONENTS uc REQUIRED)
@@ -163,3 +165,4 @@ add_subdirectory(utility)
 add_subdirectory(common)
 add_subdirectory(client)
 add_subdirectory(server)
+add_subdirectory(tools)
