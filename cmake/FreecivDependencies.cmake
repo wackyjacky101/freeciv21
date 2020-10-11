@@ -190,7 +190,7 @@ if (FREECIV_ENABLE_CLIENT
     OR FREECIV_ENABLE_FCMP_QT
     OR FREECIV_ENABLE_RULEDIT)
   # May want to relax the version later
-  find_package(Qt5 5.10 COMPONENTS Widgets REQUIRED)
+  find_package(Qt5 5.9 COMPONENTS Widgets REQUIRED)
 endif()
 
 # FCMP-specific dependencies
