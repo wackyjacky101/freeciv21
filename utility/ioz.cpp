@@ -450,8 +450,12 @@ fz_FILE *fz_from_stream(FILE *stream)
     return NULL;
   }
 
-  return new fz_FILE{
-      .method = FZ_PLAIN, .memory = false, .u = {.plain = stream}};
+  auto ret = new fz_FILE;
+  ret->method = FZ_PLAIN;
+  ret->mode = ' ';
+  ret->memory = false;
+  ret->u.plain = stream;
+  return ret;
 }
 
 /************************************************************************/ /**
