@@ -380,42 +380,47 @@ cmafec_get_result_descr(struct city *pcity, const struct cm_result *result,
 void create_default_cma_presets(void)
 {
   int i;
-  struct cm_parameter parameters[] = {
+  struct cm_parameter parameters[5];
+  parameters[0] =
       {/* very happy */
        .minimal_surplus = {0, 0, 0, -20, 0, 0},
        .require_happy = FALSE,
        .allow_disorder = FALSE,
        .allow_specialists = TRUE,
        .factor = {10, 5, 0, 4, 0, 4},
-       .happy_factor = 25},
+       .happy_factor = 25};
+  parameters[1] =
       {/* prefer food */
        .minimal_surplus = {-20, 0, 0, -20, 0, 0},
        .require_happy = FALSE,
        .allow_disorder = FALSE,
        .allow_specialists = TRUE,
        .factor = {25, 5, 0, 4, 0, 4},
-       .happy_factor = 0},
+       .happy_factor = 0};
+  parameters[2] =
       {/* prefer prod */
        .minimal_surplus = {0, -20, 0, -20, 0, 0},
        .require_happy = FALSE,
        .allow_disorder = FALSE,
        .allow_specialists = TRUE,
        .factor = {10, 25, 0, 4, 0, 4},
-       .happy_factor = 0},
+       .happy_factor = 0};
+  parameters[3] =
       {/* prefer gold */
        .minimal_surplus = {0, 0, 0, -20, 0, 0},
        .require_happy = FALSE,
        .allow_disorder = FALSE,
        .allow_specialists = TRUE,
        .factor = {10, 5, 0, 25, 0, 4},
-       .happy_factor = 0},
+       .happy_factor = 0};
+  parameters[4] =
       {/* prefer science */
        .minimal_surplus = {0, 0, 0, -20, 0, 0},
        .require_happy = FALSE,
        .allow_disorder = FALSE,
        .allow_specialists = TRUE,
        .factor = {10, 5, 0, 4, 0, 25},
-       .happy_factor = 0}};
+       .happy_factor = 0};
   const char *names[ARRAY_SIZE(parameters)] = {
       N_("?cma:Very happy"), N_("?cma:Prefer food"),
       N_("?cma:Prefer production"), N_("?cma:Prefer gold"),
